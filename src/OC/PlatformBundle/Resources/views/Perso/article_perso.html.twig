@@ -1,0 +1,151 @@
+
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+         
+<link rel="stylesheet" type="text/css" href="/symfony/web/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/symfony/web/css/acceuil.css">
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+   <script type="text/javascript">
+		$(document).ready(function() {
+			// grab the initial top offset of the navigation 
+		   	var stickyNavTop = $('.nav').offset().top;
+			stickyNavTop = 145;
+			console.log(stickyNavTop);
+		   	
+		   	// our function that decides weather the navigation bar should have "fixed" css position or not.
+		   	var stickyNav = function(){
+			    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+			         
+			    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+			    // otherwise change it back to relative
+			    if (scrollTop > stickyNavTop) { 
+			        $('.nav').addClass('sticky');
+			    } else {
+			        $('.nav').removeClass('sticky'); 
+			    }
+			};
+
+			stickyNav();
+			// and run it again every time you scroll
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+	</script>
+	
+   <title>The Simpsons</title>
+
+<body>
+	<div>
+		<div id="arriere">
+		<img class='scroll' src="/symfony/web/images/back2.jpg" alt="" style="position: absolute;" />
+		</div>
+		<img class='png' id="titre" src="/symfony/web/images/simp.png" alt="" style="position: relative; top: 5px; left: 0;"> 
+   
+	</div>
+		
+				
+<nav class="navbar navbar-default">
+<div class="nav sticky" id='cssmenu'>
+<ul>
+   <li><a href={{ path("simpson_acceuil") }}><span>Acceuil</span></a></li>
+   <li><a href={{ path("serie_article") }}><span>La série</span></a></li>
+   <li class='active has-sub'><a href={{ path("acceuil_perso") }}><span>Personnages</span></a>
+      <ul>
+         <li class='has-sub'><a href={{ path('affiche_perso_list', {'numero': 1}) }}><span>Principaux</span></a>
+         </li>
+         <li class='has-sub'><a href={{ path('affiche_perso_list', {'numero': 2}) }}><span>Secondaire</span></a>
+         </li>
+		 <li class='has-sub'><a href={{ path('affiche_perso_list', {'numero': 3}) }}><span>Guest</span></a>
+         </li>
+      </ul>
+   </li>
+   <li class='active has-sub'><a href={{ path("acceuil_saison") }}><span>Saisons</span></a>
+      <ul>
+		<li class='has-sub'><a><span>Saison 1-10</span></a>
+            <ul>
+				<li><a href={{ path('affiche_saison_num', {'numero': 1}) }}><span>Saison 1</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 2}) }}><span>Saison 2</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 3}) }}><span>Saison 3</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 4}) }}><span>Saison 4</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 5}) }}><span>Saison 5</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 6}) }}><span>Saison 6</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 7}) }}><span>Saison 7</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 8}) }}><span>Saison 8</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 9}) }}><span>Saison 9</span></a></li>
+			<li class='last'><a href={{ path('affiche_saison_num', {'numero': 10}) }}><span>Saison 10</span></a></li>
+			</ul>
+         </li>
+		 <li class='has-sub'><a><span>Saison 11-20</span></a>
+            <ul>
+				<li><a href={{ path('affiche_saison_num', {'numero': 11}) }}><span>Saison 11</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 12}) }}><span>Saison 12</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 13}) }}><span>Saison 13</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 14}) }}><span>Saison 14</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 15}) }}><span>Saison 15</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 16}) }}><span>Saison 16</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 17}) }}><span>Saison 17</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 18}) }}><span>Saison 18</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 19}) }}><span>Saison 19</span></a></li>
+			<li class='last'><a href={{ path('affiche_saison_num', {'numero': 20}) }}><span>Saison 20</span></a></li>
+				
+			</ul>
+         </li>
+		 <li class='has-sub'><a><span>Saison 21-28</span></a>
+            <ul>
+				<li><a href={{ path('affiche_saison_num', {'numero': 21}) }}><span>Saison 21</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 22}) }}><span>Saison 22</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 23}) }}><span>Saison 23</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 24}) }}><span>Saison 24</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 25}) }}><span>Saison 25</span></a></li>
+				<li><a href={{ path('affiche_saison_num', {'numero': 26}) }}><span>Saison 26</span></a></li>
+			<li><a href={{ path('affiche_saison_num', {'numero': 27}) }}><span>Saison 27</span></a></li>
+				<li class='last'><a href={{ path('affiche_saison_num', {'numero': 28}) }}><span>Saison 28</span></a></li>
+			
+			</ul>
+         </li>
+      </ul>
+   </li>
+   <li><a href={{ path("affiche_quote") }}><span>Citations</span></a></li>
+   <li><a href={{ path("saviez-vous_list") }}><span>Le saviez-vous?</span></a></li>
+   <li class='last'><a href={{ path("goodies_list") }}><span>Goodies</span></a></li>
+</ul>
+</div>
+</nav>
+	
+   <div id="cont-article" style="position:relative">
+			
+	
+      
+	  <pre class="titre" style="text-align:center"><b><font face="Comic sans MS" size="6">{{title}}</font></b></pre>
+	  <p align="center"><img class="article" alt="" src ="{{ asset('images/upload/' ~ lien) }}"></p>
+	 <br>
+	  <pre class="article"><font size="3">{{contenu}}</font></pre>
+	 
+	
+				   <form method="post" enctype="multipart/form-data" >
+	 
+				<div style="margin-left:77%;">
+			<a href={{path("formulaire_modif",{'id': id})}}	type="submit" class="btn btn-success"> Modifier  <span class="glyphicon glyphicon-pencil"></span></a>
+		<a href={{path("supprim_perso",{'id': id})}} class="btn btn-danger"> Supprimer  <span class="glyphicon glyphicon-trash"></span></a>
+		
+		</form>
+
+		
+
+	 		
+	
+
+	
+
+
+	
+	
+</div>
+				
+</body>
+
+</html>
